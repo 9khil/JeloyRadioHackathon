@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Sverige - Tessel</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+  <nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Tessel - Climate</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="index.html">Bulb control</a></li>
+      <li><a href="temperature.html">Temperature &reg;</a></li>
+      <li><a href="BeerTemp.html">BeerTemp &reg;</a></li>
+      <li><a href="disco.html">Disco</a></li>
+      <li><a href="#">ColorTrack</a></li>
+      <li><a href="sound.html">Sound</a></li>
+    </ul>
+  </section>
+</nav>
+
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Color tracking</h1>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="large-8 columns">
+    <div id="webcam">
+      </div>
+      <div style="margin:5px;">
+        <select id="cameraNames" size="1" onChange="changeCamera()" style="width:245px;font-size:10px;height:45px;">
+        </select>
+      </div>
+    </div>
+    <div style="float:left;">
+      <button class="btn btn-small" onclick="$.scriptcam.getMotionParameters();">Get</button>
+      <button class="btn btn-small" onclick="getColorFromCam();">Magic</button>
+    </div>
+    <div style="width:250px;float:left;">
+      <p id="motion"></p>
+      <p id="brightness"></p>
+      <p id="color"></p>
+      <div id="colordiv" style="width:150px;height:10px;margin-bottom:5px;border:1px solid black;"></div>
+      <p id="motionx"></p>
+      <p id="motiony"></p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script language="JavaScript" src="js/swfobject.js"></script>       
+    <script type="text/javascript" src="js/scriptcam.js"></script>
+   
+
+    <script src="js/site.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(function() {
+          $("#webcam").scriptcam({
+              onMotion:onMotion,
+              cornerRadius:0,
+              onError:onError,
+              onWebcamReady:onWebcamReady
+          });
+
+            });
+      initialize();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+
+input[type='range']{
+	width: 80%;
+}
+
+label span{
+	width: 100px;
+	display: inline-block;
+}
+
+
+
+/*****
+temperature.html
+******/
+
+.tempData{
+	text-align: center;
+}
+
+
+/****
+disco.html
+****/
+
+audio,
+#discoStu{ display: none;
+}
+
+
+
+/******
+colorTrack
+*******/
+
+object{
+	width: 300px !important;
+	height: 300px !important;
+}
