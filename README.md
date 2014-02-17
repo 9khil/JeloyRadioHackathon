@@ -9,7 +9,7 @@ Tessel.io, Philips Hue and unlimited drinks
 	<li>Philips HUE</li>
 </ul>
 
-<br><br>
+<br>
 
 <h2>HowTo:</h2>
 
@@ -18,4 +18,10 @@ Tessel.io, Philips Hue and unlimited drinks
 2. Run server.js: <code>node server.js</code> 
 You should see data from the temperature sensor
 
-3. Go to localhost:8000
+3. Hm.
+
+
+<h2>Whats what</h2>
+
+<p>climateModule folder contains code for connecting to Tessel, reading from sensor and writing data to a file.</p>
+<p>TeamSverige folder contains HTML and JavaScript for Philips HUE.</p>
