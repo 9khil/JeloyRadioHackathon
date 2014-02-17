@@ -3,7 +3,13 @@ JeloyRadioHackathon
 
 Tessel.io, Philips Hue and unlimited drinks
 
+<h2>What you need</h2>
+<ul>
+	<li>Tessel.IO with climate module</li>
+	<li>Philips HUE</li>
+</ul>
 
+<br><br>
 
 <h2>HowTo:</h2>
 
