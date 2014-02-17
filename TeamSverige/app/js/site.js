@@ -1,5 +1,5 @@
-var requestURL = "http://192.168.1.236/api/newdeveloper/lights"; 
-var groupRequestURL = "http://192.168.1.236/api/newdeveloper/groups/0"; 
+var requestURL = "http://10.1.101.147/api/newdeveloper/lights"; 
+var groupRequestURL = "http://10.1.101.147/api/newdeveloper/groups/0"; 
 var tesselURL = "http://192.168.1.38:8000";
 var xmlHttp;
 var temperatureRequest = new XMLHttpRequest();
@@ -177,47 +177,40 @@ for(var i = 0; i<rangeArray.length; i++){
 	});
 }
 
-function discoModeOn(){
-	var button = document.getElementById('discoMode');
-	if(discoMode) {
-		button.value="LET'S PARTY!";
-	}
-	else {
-		button.value="Disco!";	
-	}
 
+/**********************
+Disco mode
+**********************/
+function discoModeOn(){
 	var bri = Math.round(Math.random() * 255);
     var hue = Math.round(Math.random() * 32000);
 	var sat = Math.round(Math.random() * 255);    
-	/*
-    sat = Math.round(Math.random() * 255);
-    changeSat(1,sat);
-    sat = Math.round(Math.random() * 255);
-	changeSat(2,sat);
-    sat = Math.round(Math.random() * 255);
-    changeSat(3,sat);
 	
-    bri = Math.round(Math.random() * 255);
-	changeBri(1,bri);
-	bri = Math.round(Math.random() * 255);
-	changeBri(2,bri);
-	bri = Math.round(Math.random() * 255);
-	changeBri(3,bri);
-	*/
-
 	hue = Math.round(Math.random() * 32000);
 	changeHue(1,Math.round(hue));
 	hue = Math.round(Math.random() * 32000);
 	changeHue(2,Math.round(hue));
 	hue = Math.round(Math.random() * 32000);
     changeHue(3,Math.round(hue));
-	
-	if(!discoMode) {
-		return false;
-	} else {
-		setTimeout(discoModeOn,100);
-	}
 
+    bri = Math.round(Math.random() * 255);
+	changeBri(1,Math.round(bri));
+	bri = Math.round(Math.random() * 255);
+	changeBri(2,Math.round(bri));
+	bri = Math.round(Math.random() * 255);
+    changeBri(3,Math.round(bri));
+
+    sat = Math.round((Math.random()*50) + 205);
+	changeSat(1,Math.round(sat));
+	sat = Math.round((Math.random()*50) + 205);
+	changeSat(2,Math.round(sat));
+	sat = Math.round((Math.random()*50) + 205);
+    changeSat(3,Math.round(sat));
+
+
+	if(discoMode)
+		setTimeout(discoModeOn,500);
+	
 }
 
 
